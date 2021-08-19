@@ -1,7 +1,4 @@
-# This is a sample Python script.
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 import numpy as np
 import pandas as pd
 import tkinter as tk
@@ -23,10 +20,8 @@ def reorganize(PATH, PATH_Save):
     modified = cropped_array[1::7]
     frames = np.copy([i + 1 for i in range(len(modified))])
     final_array = np.hstack((frames.reshape((frames.shape[0], 1)), modified))
-    pd.DataFrame(final_array).to_csv(PATH_Save, header=None, index=None)# Press Ctrl+F8 to toggle the breakpoint.
+    pd.DataFrame(final_array).to_csv(PATH_Save, header=None, index=None)
 
-
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     root = tk.Tk()
     root.withdraw()
@@ -36,4 +31,3 @@ if __name__ == '__main__':
     destination = dirname + '/' + Filename + '.csv'
     reorganize(file_path, destination)
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
